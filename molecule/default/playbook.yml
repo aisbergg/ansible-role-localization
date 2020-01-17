@@ -1,0 +1,27 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    locales_present:
+      - de_DE.UTF-8
+    locales_absent:
+      - en_US.UTF-8
+    locales_default:
+      language: de_DE
+      lang: de_DE.UTF-8
+      lc_address: de_DE.UTF-8
+      lc_collate: de_DE.UTF-8
+      lc_ctype: de_DE.UTF-8
+      lc_identification: de_DE.UTF-8
+      lc_monetary: de_DE.UTF-8
+      lc_messages: de_DE.UTF-8
+      lc_measurement: de_DE.UTF-8
+      lc_name: de_DE.UTF-8
+      lc_numeric: de_DE.UTF-8
+      lc_paper: de_DE.UTF-8
+      lc_telephone: de_DE.UTF-8
+      lc_time: de_DE.UTF-8
+      # lc_all: de_DE.UTF-8
+    locales_language_packs: "{{ ['language-pack-de'] if ansible_os_family == 'Debian' else ['langpacks-de'] if ansible_os_family == 'RedHat' else [] }}"
+  roles:
+    - role: aisbergg.locales

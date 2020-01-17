@@ -1,0 +1,31 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: Aisbergg
+  description: Set locales on Linux systems.
+  company: none
+  issue_tracker_url: https://github.com/Aisbergg/ansible-role-locales/issues
+  license: MIT
+  min_ansible_version: 2.0
+  platforms:
+    - name: EL
+      versions:
+        - 6
+        - 7
+    - name: Fedora
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Archlinux
+      versions:
+        - all
+  galaxy_tags:
+    - system
+    - locales
+    - sysadmin

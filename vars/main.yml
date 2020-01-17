@@ -1,0 +1,5 @@
+---
+# default variables
+locales_dependencies: []
+locales_conf: /etc/locale.conf
+locales_gen: /etc/locale.gen

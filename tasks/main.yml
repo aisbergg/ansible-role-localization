@@ -1,0 +1,38 @@
+---
+- name: Include OS-specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - files:
+      - "{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+      - "{{ ansible_distribution }}.yml"
+      - "{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"
+      - "{{ ansible_os_family }}.yml"
+      skip: yes
+
+- name: Install dependencies and language packs
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ locales_dependencies + locales_language_packs }}"
+  tags:
+    - locales
+
+- include_tasks: "{{ file }}"
+  with_first_found:
+    - "manage-locales-{{ ansible_os_family }}.yml"
+    - "manage-locales.yml"
+  loop_control:
+    loop_var: file
+  tags:
+    - locales
+
+- name: Generate locale.conf
+  template:
+    src: locale.conf.j2
+    dest: "{{ locales_conf }}"
+    owner: root
+    group: root
+    mode: 0644
+    lstrip_blocks: true
+  tags:
+    - locales

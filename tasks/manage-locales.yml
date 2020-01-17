@@ -1,0 +1,12 @@
+---
+- name: Ensure specified locales are present
+  locale_gen:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ locales_present }}"
+
+- name: Ensure specified locales are absent
+  locale_gen:
+    name: "{{ item }}"
+    state: absent
+  loop: "{{ locales_absent }}"
