@@ -39,6 +39,15 @@ None.
 ```yaml
 - hosts: all
   vars: 
+    locales_present:
+      - de_DE.UTF-8
+      - en_US.UTF-8
+    locales_absent:
+      - fr_FR.UTF-8
+    locales_default:
+      language: de_DE
+      lang: de_DE.UTF-8
+      lc_all: de_DE.UTF-8
   roles:
     - role: aisbergg.locales
 ```
