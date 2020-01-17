@@ -5,3 +5,4 @@ locales_present:
 locales_absent: []
 locales_default:
   lang: en_US.UTF-8
+  lc_all: en_US.UTF-8
