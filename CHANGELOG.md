@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2019-01-22
+### Added
+- Compatibility with EL 8
+- Tests for EL
+
 ## [1.0.0] - 2019-01-17
 ### Added
 - First version of the role
