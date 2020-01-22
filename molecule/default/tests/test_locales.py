@@ -7,12 +7,13 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_hosts_file(host):
-    # check if locale is present
-    available_locales = host.check_output("locale -a")
-    assert "de_DE.utf8" in available_locales
+    if host.system_info.distribution != "centos" and host.system_info.release == "8":
+        # check if locale is present
+        available_locales = host.check_output("locale -a")
+        assert "de_DE.utf8" in available_locales
 
-    # check if locale is absent
-    assert "en_US.utf8" not in available_locales
+        # check if locale is absent
+        assert "en_US.utf8" not in available_locales
 
     # check if locale is set
     locale_conf = host.file("/etc/locale.conf")

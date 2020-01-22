@@ -5,7 +5,7 @@
   tasks:
     - name: Ensure Python is installed
       raw: pacman -Sy --noconfirm python
-    - name: Ensure Python is installed
+    - name: Remove locale.gen file
       raw: rm /etc/locale.gen
     - name: Reinstall glibc
       raw: pacman -S --noconfirm glibc grep
@@ -18,4 +18,13 @@
       raw: apt-get update
     - name: Ensure Python is installed
       raw: apt-get install -y python3
+
+- name: Prepare RedHat Distributions
+  hosts: redhat
+  gather_facts: no
+  tasks:
+    - name: Ensure Python is installed
+      raw: yum install -y python36
+    - name: Reinstall GlibC
+      raw: sh -c "yum reinstall -y glibc || yum install -y glibc"
 

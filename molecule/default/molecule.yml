@@ -13,6 +13,16 @@ platforms:
     pre_build_image: True
     groups:
       - debian
+  - name: centos-8
+    image: centos:8
+    pre_build_image: True
+    groups:
+      - redhat
+  - name: centos-7
+    image: centos:7
+    pre_build_image: True
+    groups:
+      - redhat
   # - name: archlinux
   #   image: archlinux/base:latest
   #   pre_build_image: True
