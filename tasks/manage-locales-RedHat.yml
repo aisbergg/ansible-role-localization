@@ -1,8 +1,3 @@
 ---
-- name: Ensure specified locales are present
-  command: "localedef -i {{ item|regex_replace('(.*)\\..*', '\\1') | quote }} -f {{ item|regex_replace('.*\\.(.*)', '\\1') | quote }} {{ item|quote }}"
-  loop: "{{ locales_present }}"
-
-- name: Ensure specified locales are absent
-  command: "localedef --delete-from-archive {{ item|regex_replace('(.*)\\..*', '\\1') | quote }} -f {{ item|regex_replace('.*\\.(.*)', '\\1') | quote }} {{ item|quote }}"
-  loop: "{{ locales_absent }}"
+# in newer RedHat distributions the locales come pre-compiled with
+# 'glibc-langpack-<locale_code>' packages

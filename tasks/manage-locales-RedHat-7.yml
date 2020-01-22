@@ -1,0 +1,12 @@
+---
+- name: Ensure specified locales are present
+  command: "localedef -i {{ item|langcode|quote }} -f {{ item|encoding|quote }} {{ item|quote }}"
+  loop: "{{ locales_present }}"
+
+- name: Ensure specified locales are absent
+  command: "localedef --delete-from-archive {{ item|langcode|quote }} -f {{ item|encoding|quote }} {{ item|encoding2lower|quote }}"
+  loop: "{{ locales_absent }}"
+
+- debug:
+    msg: "localedef --delete-from-archive {{ item|langcode|quote }} -f {{ item|encoding|quote }} {{ item|encoding2lower|quote }}"
+  loop: "{{ locales_absent }}"
