@@ -1,4 +1,4 @@
-{{ ansible_managed|comment }}
+{{ ansible_managed | comment }}
 
 {% set lc_var_names = [
   "lang",
@@ -19,6 +19,6 @@
 %}
 {% for lc_var_name in lc_var_names %}
   {% if lc_var_name in locales_default %}
-{{ lc_var_name|upper }}="{{ locales_default.get(lc_var_name) }}"
+{{ lc_var_name | upper }}="{{ locales_default.get(lc_var_name) }}"
   {% endif %}
 {% endfor %}
