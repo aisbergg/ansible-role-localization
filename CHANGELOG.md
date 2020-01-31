@@ -6,11 +6,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.1.0] - 2019-01-22
+## [1.1.1] - 2020-01-31
+### Changed
+- Added `changed_when` to command statements
+- Format code
+
+### Fixed
+- Fixed typo in changelog
+
+## [1.1.0] - 2020-01-22
 ### Added
 - Compatibility with EL 8
 - Tests for EL
 
-## [1.0.0] - 2019-01-17
+## [1.0.0] - 2020-01-17
 ### Added
 - First version of the role
