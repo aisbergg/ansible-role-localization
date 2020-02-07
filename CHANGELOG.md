@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.2] - 2020-02-07
+### Fixed
+- Fixed localedef syntax for EL7
+
 ## [1.1.1] - 2020-01-31
 ### Changed
 - Added `changed_when` to command statements
