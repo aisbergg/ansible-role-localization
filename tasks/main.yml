@@ -3,9 +3,9 @@
   include_vars: "{{ item }}"
   with_first_found:
     - files:
-      - "{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"
-      - "{{ ansible_os_family }}.yml"
-      skip: yes
+        - "{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"
+        - "{{ ansible_os_family }}.yml"
+      skip: true
 
 - name: Install dependencies and language packs
   package:

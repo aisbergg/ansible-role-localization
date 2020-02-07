@@ -10,22 +10,19 @@ lint:
 platforms:
   - name: ubuntu-19.10
     image: ubuntu:19.10
-    pre_build_image: True
+    pre_build_image: true
     groups:
       - debian
   - name: centos-8
     image: centos:8
-    pre_build_image: True
+    pre_build_image: true
     groups:
       - redhat
   - name: centos-7
     image: centos:7
-    pre_build_image: True
+    pre_build_image: true
     groups:
       - redhat
-  # - name: archlinux
-  #   image: archlinux/base:latest
-  #   pre_build_image: True
 provisioner:
   name: ansible
   playbooks:

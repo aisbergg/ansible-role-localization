@@ -1,7 +1,7 @@
 ---
 - name: Prepare ArchLinux Distributions
   hosts: archlinux
-  gather_facts: no
+  gather_facts: false
   tasks:
     - name: Ensure Python is installed
       raw: pacman -Sy --noconfirm python
@@ -12,7 +12,7 @@
 
 - name: Prepare Debian Distributions
   hosts: debian
-  gather_facts: no
+  gather_facts: false
   tasks:
     - name: Update package cache
       raw: apt-get update
@@ -21,10 +21,9 @@
 
 - name: Prepare RedHat Distributions
   hosts: redhat
-  gather_facts: no
+  gather_facts: false
   tasks:
     - name: Ensure Python is installed
       raw: yum install -y python36
     - name: Reinstall GlibC
       raw: sh -c "yum reinstall -y glibc || yum install -y glibc"
-

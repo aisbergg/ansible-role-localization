@@ -22,10 +22,10 @@
       lc_telephone: de_DE.UTF-8
       lc_time: de_DE.UTF-8
       # lc_all: de_DE.UTF-8
-    locales_language_packs: "{{ 
-      ['language-pack-de'] if ansible_os_family == 'Debian' else 
-      ['glibc-langpack-de'] if ansible_os_family == 'RedHat' and ansible_distribution_major_version == '8' else 
-      [] 
+    locales_language_packs: "{{
+      ['language-pack-de'] if ansible_os_family == 'Debian' else
+      ['glibc-langpack-de'] if ansible_os_family == 'RedHat' and ansible_distribution_major_version == '8' else
+      []
     }}"
   roles:
     - role: aisbergg.locales
