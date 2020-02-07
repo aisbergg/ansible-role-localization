@@ -15,9 +15,6 @@
   tags:
     - locales
 
-- debug:
-    msg:  "manage-locales-{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"
-
 - include_tasks: "{{ file }}"
   with_first_found:
     - "manage-locales-{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"

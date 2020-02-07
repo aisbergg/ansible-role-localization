@@ -2,15 +2,17 @@
 - name: Ensure specified locales are present
   command: >-
     localedef
-    -i {{ item | regex_replace('(.*)\\..*', '\\1') | quote }}
-    -f {{ item | regex_replace('.*\\.(.*)', '\\1') | quote }} {{ item | quote }}
+    -i {{ item | langcode | quote }}
+    -f {{ item | encoding | quote }}
+    {{ item | encoding2lower | quote }}
   changed_when: false
   loop: "{{ locales_present }}"
 
 - name: Ensure specified locales are absent
   command: >-
     localedef
-    --delete-from-archive {{ item | regex_replace('(.*)\\..*', '\\1') | quote }}
-    -f {{ item | regex_replace('.*\\.(.*)', '\\1') | quote }} {{ item | quote }}
+    --delete-from-archive {{ item | langcode | quote }}
+    -f {{ item | encoding | quote }}
+    {{ item | encoding2lower | quote }}
   changed_when: false
   loop: "{{ locales_absent }}"
