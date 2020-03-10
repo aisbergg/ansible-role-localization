@@ -1,24 +1,7 @@
 {{ ansible_managed | comment }}
 
-{% set lc_var_names = [
-  "lang",
-  "language",
-  "lc_address",
-  "lc_collate",
-  "lc_ctype",
-  "lc_identification",
-  "lc_monetary",
-  "lc_messages",
-  "lc_measurement",
-  "lc_name",
-  "lc_numeric",
-  "lc_paper",
-  "lc_telephone",
-  "lc_time",
-  "lc_all"]
-%}
-{% for lc_var_name in lc_var_names %}
-  {% if lc_var_name in locales_default %}
-{{ lc_var_name | upper }}="{{ locales_default.get(lc_var_name) }}"
+{% for variable, value in localization_locales_default.items() %}
+  {% if variable | upper in localization_locales_variables %}
+{{ variable | upper }}={{ value }}
   {% endif %}
 {% endfor %}

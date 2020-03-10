@@ -3,9 +3,9 @@ dependencies: []
 
 galaxy_info:
   author: Aisbergg
-  description: Set locales on Linux systems.
+  description: Set locales, keymap and timezone on Linux systems.
   company: none
-  issue_tracker_url: https://github.com/Aisbergg/ansible-role-locales/issues
+  issue_tracker_url: https://github.com/Aisbergg/ansible-role-localization/issues
   license: MIT
   min_ansible_version: 2.0
   platforms:
@@ -27,6 +27,7 @@ galaxy_info:
       versions:
         - all
   galaxy_tags:
-    - system
+    - keymap
     - locales
-    - sysadmin
+    - localization
+    - timezone

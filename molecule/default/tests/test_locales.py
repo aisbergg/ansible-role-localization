@@ -34,4 +34,13 @@ def test_hosts_file(host):
         "LC_TIME": "de_DE.UTF-8",
     }
     for k, v in lc_vars.items():
-        assert locale_conf.contains("{}=\"{}\"".format(k, v))
+        assert locale_conf.contains("{}={}".format(k, v))
+
+    # check if keymap is set
+    vconsole_conf = host.file("/etc/vconsole.conf")
+    keymap_vars = {
+        "KEYMAP": "de",
+        "KEYMAP_TOGGLE": "de-latin1",
+    }
+    for k, v in keymap_vars.items():
+        assert vconsole_conf.contains("{}={}".format(k, v))

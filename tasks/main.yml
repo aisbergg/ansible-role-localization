@@ -1,5 +1,6 @@
 ---
 - name: Include OS-specific variables
+  tags: localization
   include_vars: "{{ item }}"
   with_first_found:
     - files:
@@ -8,30 +9,17 @@
       skip: true
 
 - name: Install dependencies and language packs
+  tags: localization
   package:
     name: "{{ item }}"
     state: present
-  loop: "{{ locales_dependencies + locales_language_packs }}"
-  tags:
-    - locales
+  loop: "{{ localization_dependencies + localization_language_packs }}"
 
-- include_tasks: "{{ file }}"
-  with_first_found:
-    - "manage-locales-{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"
-    - "manage-locales-{{ ansible_os_family }}.yml"
-    - "manage-locales.yml"
-  loop_control:
-    loop_var: file
-  tags:
-    - locales
+- import_tasks: timezone.yml
+  tags: localization
 
-- name: Generate locale.conf
-  template:
-    src: locale.conf.j2
-    dest: "{{ locales_conf }}"
-    owner: root
-    group: root
-    mode: 0644
-    lstrip_blocks: true
-  tags:
-    - locales
+- import_tasks: locales.yml
+  tags: localization
+
+- import_tasks: keymap.yml
+  tags: localization

@@ -5,4 +5,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
+.eggs/
 
+.tox/
+.vagrant/
+pytestdebug.log

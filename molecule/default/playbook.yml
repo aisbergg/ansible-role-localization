@@ -2,11 +2,11 @@
 - name: Converge
   hosts: all
   vars:
-    locales_present:
+    localization_locales_present:
       - de_DE.UTF-8
-    locales_absent:
+    localization_locales_absent:
       - en_US.UTF-8
-    locales_default:
+    localization_locales_default:
       language: de_DE
       lang: de_DE.UTF-8
       lc_address: de_DE.UTF-8
@@ -22,10 +22,13 @@
       lc_telephone: de_DE.UTF-8
       lc_time: de_DE.UTF-8
       # lc_all: de_DE.UTF-8
-    locales_language_packs: "{{
+    localization_language_packs: "{{
       ['language-pack-de'] if ansible_os_family == 'Debian' else
       ['glibc-langpack-de'] if ansible_os_family == 'RedHat' and ansible_distribution_major_version == '8' else
       []
     }}"
+    localization_keymap: de
+    localization_keymap_toggle: de-latin1
+    localization_timezone: Europe/Berlin
   roles:
-    - role: aisbergg.locales
+    - aisbergg.localization

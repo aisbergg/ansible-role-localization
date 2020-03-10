@@ -1,3 +1,0 @@
----
-# in newer RedHat distributions the locales come pre-compiled with
-# 'glibc-langpack-<locale_code>' packages

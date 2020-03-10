@@ -1,8 +1,16 @@
 ---
-locales_language_packs: []
-locales_present:
+# locales to be configured
+localization_language_packs: []
+localization_locales_present:
   - en_US.UTF-8
-locales_absent: []
-locales_default:
+localization_locales_absent: []
+localization_locales_default:
   lang: en_US.UTF-8
   lc_all: en_US.UTF-8
+
+# keymap to be set
+localization_keymap: us
+localization_keymap_toggle:
+
+# timezone to be set
+localization_timezone:

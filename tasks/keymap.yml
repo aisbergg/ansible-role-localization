@@ -1,0 +1,17 @@
+---
+- name: Configure keymap
+  lineinfile:
+    path: /etc/vconsole.conf
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: "{{ item.state | default(omit) }}"
+    create: true
+    owner: root
+    group: root
+    mode: "644"
+  loop:
+    - regexp: '^KEYMAP='
+      line: "KEYMAP={{ localization_keymap }}"
+    - regexp: '^KEYMAP_TOGGLE='
+      line: "KEYMAP_TOGGLE={{ localization_keymap_toggle }}"
+      state: "{{ 'present' if localization_keymap_toggle | default ('') != '' else 'absent' }}"

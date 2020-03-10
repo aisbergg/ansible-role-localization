@@ -1,0 +1,5 @@
+---
+- name: Set timezone
+  timezone:
+    name: "{{ localization_timezone }}"
+  when: localization_timezone | default('') != ''

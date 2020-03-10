@@ -1,6 +1,6 @@
 ---
 # variables for Debian distributions
-locales_dependencies:
+localization_dependencies:
   - tzdata
   - locales
-locales_gen: /var/lib/locales/supported.d/local
+  - console-data
