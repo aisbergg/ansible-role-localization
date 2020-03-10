@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2020-03-10
+### Changed
+- Name of the role
+
+### Added
+- Add option to set timezone
+- Add option to set keymap
+
 ## [1.1.2] - 2020-02-07
 ### Fixed
 - Fixed localedef syntax for EL7
