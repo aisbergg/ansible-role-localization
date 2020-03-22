@@ -14,4 +14,4 @@
       line: "KEYMAP={{ localization_keymap }}"
     - regexp: '^KEYMAP_TOGGLE='
       line: "KEYMAP_TOGGLE={{ localization_keymap_toggle }}"
-      state: "{{ 'present' if localization_keymap_toggle | default ('') != '' else 'absent' }}"
+      state: "{{ localization_keymap_toggle is none | ternary('absent', 'present') }}"
