@@ -8,12 +8,11 @@
         - "{{ ansible_os_family }}.yml"
       skip: true
 
-- name: Install dependencies and language packs
+- name: Install requirements and language packs
   tags: localization
   package:
-    name: "{{ item }}"
+    name: "{{ localization_requirements + localization_language_packs }}"
     state: present
-  loop: "{{ localization_dependencies + localization_language_packs }}"
 
 - import_tasks: timezone.yml
   tags: localization

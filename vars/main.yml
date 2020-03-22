@@ -1,6 +1,6 @@
 ---
 # default variables
-localization_dependencies:
+localization_requirements:
   - tzdata
 
 localization_locales_conf: /etc/locale.conf
