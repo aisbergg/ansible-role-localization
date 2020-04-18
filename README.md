@@ -10,7 +10,7 @@ None.
 
 | Variable | Default | Comments |
 |----------|---------|----------|
-| `localization_language_packs` | `[]` | List of language packs to be installed. For Debian distributions package names are: `language-pack-*` and for CentOS 8 `glibc-langpack-*` |
+| `localization_language_packs` | `[]` | List of language packs to be installed.</br>Some systems provide dedicated packages for each language. You have to install those packages in order to get the locales working.</br>In Ubuntu systems the packages are named `language-pack-*` and in CentOS 8 `glibc-langpack-*`. |
 | `localization_locales_present` | `[]` | List of locales to be present. |
 | `localization_locales_absent` | `[]` | List of locales to be absent. |
 | `localization_locales_default` | `{"lang": "en_US.UTF-8", "lc_all": "en_US.UTF-8"}` | Mapping of default locales variables. |
