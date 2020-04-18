@@ -1,5 +1,8 @@
 ---
-- block:
+# in RedHat 8 distributions the locales come pre-compiled with
+# 'glibc-langpack-<locale_code>' packages
+- when: ansible_os_family == 'RedHat' and ansible_distribution_major_version <= 7
+  block:
     - name: Ensure specified locales are present on RedHat 7 distributions
       command: >-
         localedef
@@ -17,11 +20,9 @@
         {{ item | encoding2lower | quote }}
       changed_when: false
       loop: "{{ localization_locales_absent }}"
-  # in RedHat 8 distributions the locales come pre-compiled with
-  # 'glibc-langpack-<locale_code>' packages
-  when: ansible_os_family == 'RedHat' and ansible_distribution_major_version <= 7
 
-- block:
+- when: ansible_os_family != 'RedHat'
+  block:
     - name: Ensure specified locales are present
       locale_gen:
         name: "{{ item }}"
@@ -33,7 +34,6 @@
         name: "{{ item }}"
         state: absent
       loop: "{{ localization_locales_absent }}"
-  when: ansible_os_family != 'RedHat'
 
 - name: Configure locales
   template:

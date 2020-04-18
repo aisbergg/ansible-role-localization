@@ -5,8 +5,8 @@ localization_locales_present:
   - en_US.UTF-8
 localization_locales_absent: []
 localization_locales_default:
-  lang: en_US.UTF-8
-  lc_all: en_US.UTF-8
+  LANG: en_US.UTF-8
+  LC_ALL: en_US.UTF-8
 
 # keymap to be set
 localization_keymap: us

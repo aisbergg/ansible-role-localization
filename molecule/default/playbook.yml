@@ -7,23 +7,23 @@
     localization_locales_absent:
       - en_US.UTF-8
     localization_locales_default:
-      language: de_DE
-      lang: de_DE.UTF-8
-      lc_address: de_DE.UTF-8
-      lc_collate: de_DE.UTF-8
-      lc_ctype: de_DE.UTF-8
-      lc_identification: de_DE.UTF-8
-      lc_monetary: de_DE.UTF-8
-      lc_messages: de_DE.UTF-8
-      lc_measurement: de_DE.UTF-8
-      lc_name: de_DE.UTF-8
-      lc_numeric: de_DE.UTF-8
-      lc_paper: de_DE.UTF-8
-      lc_telephone: de_DE.UTF-8
-      lc_time: de_DE.UTF-8
-      # lc_all: de_DE.UTF-8
+      LANGUAGE: de_DE
+      LANG: de_DE.UTF-8
+      LC_ADDRESS: de_DE.UTF-8
+      LC_COLLATE: de_DE.UTF-8
+      LC_CTYPE: de_DE.UTF-8
+      LC_IDENTIFICATION: de_DE.UTF-8
+      LC_MONETARY: de_DE.UTF-8
+      LC_MESSAGES: de_DE.UTF-8
+      LC_MEASUREMENT: de_DE.UTF-8
+      LC_NAME: de_DE.UTF-8
+      LC_NUMERIC: de_DE.UTF-8
+      LC_PAPER: de_DE.UTF-8
+      LC_TELEPHONE: de_DE.UTF-8
+      LC_TIME: de_DE.UTF-8
+      # LC_ALL: de_DE.UTF-8
     localization_language_packs: "{{
-      ['language-pack-de'] if ansible_os_family == 'Debian' else
+      ['language-pack-de'] if ansible_distribution == 'Ubuntu' else
       ['glibc-langpack-de'] if ansible_os_family == 'RedHat' and ansible_distribution_major_version == '8' else
       []
     }}"
