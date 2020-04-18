@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.0] - 2020-04-18
+### Changed
+- Use uppercase names for locales
+- Clarify use of `localization_language_packs` option
+
 ## [2.1.0] - 2020-03-22
 ### Changed
 - Correct required Ansible version
