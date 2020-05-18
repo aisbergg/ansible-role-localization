@@ -1,6 +1,6 @@
 ---
 # variables for Debian distributions
-localization_requirements:
+__localization_requirements:
   - tzdata
   - locales
   - console-data

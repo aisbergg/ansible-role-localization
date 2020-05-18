@@ -1,10 +1,10 @@
 ---
 # default variables
-localization_requirements:
+__localization_requirements:
   - tzdata
 
-localization_locales_conf: /etc/locale.conf
-localization_locales_variables:
+__localization_locales_conf: /etc/locale.conf
+__localization_locales_variables:
   - LANG
   - LANGUAGE
   - LC_ADDRESS
