@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.4.0] - 2020-06-05
+## [2.4.0] - 2020-08-22
 ### Fixed
 - Fix locales cfg path for Debian
 - Fix sorting of LC vars
