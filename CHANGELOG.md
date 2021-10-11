@@ -1,66 +1,174 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+- [3.0.0 (2021-10-11)](#300-2021-10-11)
+- [2.4.0 (2020-08-22)](#240-2020-08-22)
+- [2.3.2 (2020-06-05)](#232-2020-06-05)
+- [2.3.1 (2020-05-22)](#231-2020-05-22)
+- [2.2.0 (2020-04-18)](#220-2020-04-18)
+- [2.1.0 (2020-03-22)](#210-2020-03-22)
+- [2.0.0 (2020-03-10)](#200-2020-03-10)
+- [1.1.2 (2020-02-07)](#112-2020-02-07)
+- [1.1.1 (2020-01-31)](#111-2020-01-31)
+- [1.1.0 (2020-01-22)](#110-2020-01-22)
+- [1.0.0 (2020-01-17)](#100-2020-01-17)
 
-## [Unreleased]
+---
 
-## [2.4.0] - 2020-08-22
-### Fixed
-- Fix locales cfg path for Debian
-- Fix sorting of LC vars
+<a name="3.0.0"></a>
+## [3.0.0](https://github.com/aisbergg/ansible-role-localization/compare/v2.4.0...v3.0.0) (2021-10-11)
 
-## [2.3.2] - 2020-06-05
-### Fixed
-- Fix quotes
+### Bug Fixes
 
-## [2.3.1] - 2020-05-22
-### Fixed
-- Fix version comparison
+- date
+- sorting of LC vars
+- locales cfg path for debian
+- quotes
+- version comparison
 
-## [2.3.0] - 2020-05-18
-### Changed
-- Clean up
+### CI Configuration
 
-## [2.2.0] - 2020-04-18
-### Changed
-- Use uppercase names for locales
-- Clarify use of `localization_language_packs` option
+- add Github action for automatic releases
 
-## [2.1.0] - 2020-03-22
-### Changed
-- Correct required Ansible version
-- Pass requirements list directly to package module
+### Chores
 
-### Fixed
-- Linting errors
+- update changelog
+- update development configs
+- update changelog
+- add bump2version configuration
+- update changelog
+- **.ansible-lint:** update linter config
+- **.pre-commit-config.yaml:** bump pre-commit hook versions
+- **CHANGELOG.md:** update changelog
+- **CHANGELOG.tpl.md:** update changelog template
+- **requirements.yml:** add role requirements
 
-## [2.0.0] - 2020-03-10
-### Changed
-- Name of the role
+### Code Refactoring
 
-### Added
-- Add option to set timezone
-- Add option to set keymap
+- drop support for Ansible < 2.10
+- clean up
 
-## [1.1.2] - 2020-02-07
-### Fixed
-- Fixed localedef syntax for EL7
+### Documentation
 
-## [1.1.1] - 2020-01-31
-### Changed
-- Added `changed_when` to command statements
-- Format code
+- clarify use of `localization_language_packs` option
 
-### Fixed
-- Fixed typo in changelog
+### Features
 
-## [1.1.0] - 2020-01-22
-### Added
-- Compatibility with EL 8
-- Tests for EL
+- use uppercase names for locales
+- pass the list of requirements directly to package module
 
-## [1.0.0] - 2020-01-17
-### Added
-- First version of the role
+
+<a name="2.4.0"></a>
+## [2.4.0](https://github.com/aisbergg/ansible-role-localization/compare/v2.3.2...v2.4.0) (2020-08-22)
+
+### Bug Fixes
+
+- sorting of LC vars
+- locales cfg path for debian
+
+### Chores
+
+- update changelog
+
+
+<a name="2.3.2"></a>
+## [2.3.2](https://github.com/aisbergg/ansible-role-localization/compare/v2.3.1...v2.3.2) (2020-06-05)
+
+### Bug Fixes
+
+- quotes
+
+
+<a name="2.3.1"></a>
+## [2.3.1](https://github.com/aisbergg/ansible-role-localization/compare/v2.2.0...v2.3.1) (2020-05-22)
+
+### Bug Fixes
+
+- version comparison
+
+### Code Refactoring
+
+- clean up
+
+
+<a name="2.2.0"></a>
+## [2.2.0](https://github.com/aisbergg/ansible-role-localization/compare/v2.1.0...v2.2.0) (2020-04-18)
+
+### Chores
+
+- **CHANGELOG.md:** update changelog
+
+### Features
+
+- use uppercase names for locales
+
+
+<a name="2.1.0"></a>
+## [2.1.0](https://github.com/aisbergg/ansible-role-localization/compare/v2.0.0...v2.1.0) (2020-03-22)
+
+### Bug Fixes
+
+- linting
+- correct Ansible version requirement
+
+### Chores
+
+- update changelog
+- add bump2version configuration
+
+
+<a name="2.0.0"></a>
+## [2.0.0](https://github.com/aisbergg/ansible-role-localization/compare/v1.1.2...v2.0.0) (2020-03-10)
+
+### Chores
+
+- update changelog
+
+### Features
+
+- add options to set keymap and timezone
+
+
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/aisbergg/ansible-role-localization/compare/v1.1.1...v1.1.2) (2020-02-07)
+
+### Bug Fixes
+
+- linting
+- for EL7
+
+### Chores
+
+- update changelog
+
+
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/aisbergg/ansible-role-localization/compare/v1.1.0...v1.1.1) (2020-01-31)
+
+### Chores
+
+- update changelog
+
+### Code Refactoring
+
+- surround pipe symbol with one space
+- split long command into several lines
+
+
+<a name="1.1.0"></a>
+## [1.1.0](https://github.com/aisbergg/ansible-role-localization/compare/v1.0.0...v1.1.0) (2020-01-22)
+
+### Chores
+
+- update changelog
+
+### Features
+
+- add compatibility with CentOS8
+
+
+<a name="1.0.0"></a>
+## [1.0.0]() (2020-01-17)
+
+Initial Release
