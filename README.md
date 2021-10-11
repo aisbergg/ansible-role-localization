@@ -41,7 +41,7 @@ None.
 
 ```yaml
 - hosts: all
-  vars: 
+  vars:
     localization_locales_present:
       - de_DE.UTF-8
       - en_US.UTF-8
