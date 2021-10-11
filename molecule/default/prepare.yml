@@ -3,27 +3,34 @@
   hosts: archlinux
   gather_facts: false
   tasks:
-    - name: Ensure Python is installed
-      raw: pacman -Sy --noconfirm python
-    - name: Remove locale.gen file
-      raw: rm /etc/locale.gen
-    - name: Reinstall glibc
-      raw: pacman -S --noconfirm glibc grep
+    - name: ensure Python is installed
+      ansible.builtin.raw: pacman -Sy --noconfirm python
+      changed_when: false
+    - name: remove locale.gen file
+      ansible.builtin.raw: rm /etc/locale.gen  # noqa deprecated-command-syntax
+      changed_when: false
+    - name: reinstall glibc
+      ansible.builtin.raw: pacman -S --noconfirm glibc grep
+      changed_when: false
 
 - name: Prepare Debian Distributions
   hosts: debian
   gather_facts: false
   tasks:
-    - name: Update package cache
-      raw: apt-get update
-    - name: Ensure Python is installed
-      raw: apt-get install -y python3
+    - name: update package cache
+      ansible.builtin.raw: apt-get update
+      changed_when: false
+    - name: ensure Python is installed
+      ansible.builtin.raw: apt-get install -y python3
+      changed_when: false
 
 - name: Prepare RedHat Distributions
   hosts: redhat
   gather_facts: false
   tasks:
-    - name: Ensure Python is installed
-      raw: yum install -y python36
-    - name: Reinstall GlibC
-      raw: sh -c "yum reinstall -y glibc || yum install -y glibc"
+    - name: ensure Python is installed
+      ansible.builtin.raw: yum install -y python36
+      changed_when: false
+    - name: reinstall GlibC
+      ansible.builtin.raw: sh -c "yum reinstall -y glibc || yum install -y glibc"
+      changed_when: false

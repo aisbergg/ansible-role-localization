@@ -1,5 +1,5 @@
 ---
-- name: Set timezone
-  timezone:
+- name: set timezone
+  ansible.builtin.timezone:
     name: "{{ localization_timezone }}"
   when: localization_timezone is not none
