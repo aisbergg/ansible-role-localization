@@ -2,6 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
+- [3.1.0 (2022-01-28)](#3.1.0-2022-01-28)
 - [3.0.0 (2021-10-11)](#300-2021-10-11)
 - [2.4.0 (2020-08-22)](#240-2020-08-22)
 - [2.3.2 (2020-06-05)](#232-2020-06-05)
@@ -16,16 +17,24 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+<a name="3.1.0"></a>
+## [3.1.0](https://github.com/aisbergg/ansible-role-localization/compare/v3.0.0...3.1.0) (2022-01-28)
+
+### CI Configuration
+
+- fix automatic release and publish process
+
+### Chores
+
+- include changelog in bump commits
+
+
 <a name="3.0.0"></a>
 ## [3.0.0](https://github.com/aisbergg/ansible-role-localization/compare/v2.4.0...v3.0.0) (2021-10-11)
 
 ### Bug Fixes
 
 - date
-- sorting of LC vars
-- locales cfg path for debian
-- quotes
-- version comparison
 
 ### CI Configuration
 
@@ -35,28 +44,14 @@ All notable changes to this project will be documented in this file.
 
 - update changelog
 - update development configs
-- update changelog
-- add bump2version configuration
-- update changelog
 - **.ansible-lint:** update linter config
 - **.pre-commit-config.yaml:** bump pre-commit hook versions
-- **CHANGELOG.md:** update changelog
 - **CHANGELOG.tpl.md:** update changelog template
 - **requirements.yml:** add role requirements
 
 ### Code Refactoring
 
 - drop support for Ansible < 2.10
-- clean up
-
-### Documentation
-
-- clarify use of `localization_language_packs` option
-
-### Features
-
-- use uppercase names for locales
-- pass the list of requirements directly to package module
 
 
 <a name="2.4.0"></a>
@@ -99,6 +94,10 @@ All notable changes to this project will be documented in this file.
 
 - **CHANGELOG.md:** update changelog
 
+### Documentation
+
+- clarify use of `localization_language_packs` option
+
 ### Features
 
 - use uppercase names for locales
@@ -116,6 +115,10 @@ All notable changes to this project will be documented in this file.
 
 - update changelog
 - add bump2version configuration
+
+### Features
+
+- pass the list of requirements directly to package module
 
 
 <a name="2.0.0"></a>
